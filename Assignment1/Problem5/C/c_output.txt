@@ -1,0 +1,8 @@
+Search time for 128 is: 0.518921
+Search time for 512 is: 0.511466
+Search time for 2048 is: 0.797095
+Search time for 8192 is: 0.707653
+Search time for 32768 is: 0.825198
+Search time for 131072 is: 0.990817
+Search time for 524288 is: 1.17516
+Search time for 2097152 is: 1.14772
