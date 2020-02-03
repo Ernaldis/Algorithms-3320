@@ -1,0 +1,43 @@
+Hypothesis: Excecution time will increase for increasing input sizes at a logorithmic rate. Additionally, C++ will be faster than Java, which will be faster than Python3.
+
+Procedure: Run attached code and record the results.
+
+Data:
+  For C++ (in ms):
+    Search time for 128 is: 0.518921
+    Search time for 512 is: 0.511466
+    Search time for 2048 is: 0.797095
+    Search time for 8192 is: 0.707653
+    Search time for 32768 is: 0.825198
+    Search time for 131072 is: 0.990817
+    Search time for 524288 is: 1.17516
+    Search time for 2097152 is: 1.14772
+
+  For Java (in ns):
+    Execution time for 128 is: 161802574ns
+    Execution time for 512 is: 219896103ns
+    Execution time for 2048 is: 270452343ns
+    Execution time for 8192 is: 276333012ns
+    Execution time for 32768 is: 327654494ns
+    Execution time for 131072 is: 294963153ns
+    Execution time for 524288 is: 339572473ns
+    Execution time for 2097152 is: 542531134ns
+
+  For Python (in s):
+    For size 128 time equals: 12.428978443145752
+    For size 512 time equals: 16.91015911102295
+    For size 2048 time equals: 19.761603593826294
+    For size 8192 time equals: 22.6077139377594
+    For size 32768 time equals: 25.873791694641113
+    For size 131072 time equals: 28.864779233932495
+    For size 524288 time equals: 31.891212224960327
+    For size 2097152 time equals: 34.79578995704651
+    
+Analysis:
+  The execution time was indeed fastest for C++, and Python3 was the slowest across the board.
+  The execution times do increase at a more-or-less logorithmic rate, though both C++ and Java have examples of larger input sizes taking less time to complete.
+  This may be accounted for by the fact that the rest of the environment was not controlled. It is possible that during an abnormally short run, the system was not doing much else, whereas the system may have been quite busy during an uncommonly slow run
+  Python3 was the slowest for a number of reasons. For one, it is an interpreted language, rather than compiled. Additionally, as a concequence of being more open ended than most other languages, the interpreter must keep track of more than another language would have to.
+  Similarly, Java is a higher level language than C++. C++ is closer to assembly languages, which makes it more troublesome to code in, but runs faster as a result.
+  
+  
