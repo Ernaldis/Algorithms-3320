@@ -1,0 +1,88 @@
+1: Problem
+  Solve the Towers of Hanoi game for the following graph G = (V, E) with V = {Start, Aux1, Aux2, Aux3, Aux4, Dest} and E = {(Start, Aux1), (Aux1, Aux2), (Aux2, Aux3), (Aux3, Aux4), (Aux4, Aux1), (Aux1, Dest)}.
+    a) Design an algorithm and determine the time and space complexities of moving n disks from Start to Dest.
+    b) Implement this algorithm whereby your program prints out each of the moves of every disk. Show the output for n = 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10.
+    
+2: Data Structures
+  2.1 The game is played on pegs, which are represented by the nodes in the graph.
+  2.2 Unlike the normal Towers of Hanoi game, this is played on a directed graph. Not all nodes are connected to any particular node. The connections which are present are represented by edges in the graph.
+  2.2 The game involves disks of multiple sizes. These are represented by natural numbers, with 1 representing the smallest disk.
+  2.3 During gameplay, pegs are meant to hold disks. This property is represented by each instance of a node having a stack, which holds integers.
+  2.4 The nodes Aux1 Aux2 Aux3 & Aux4 form a cycle.
+
+3: Rules of the game
+  3.1 All disks begin on Start, with the numbers 1 to n on Starts stack in ascending order (that is, 1 is on top of the stack, n is on the bottom) order, where n is the amount of disks in the game.
+  3.2 Only one disk may be moved at one time.
+  3.3 A disk may only be moved from one peg to another if the corresponding nodes are connected in the graph G.
+  3.4 A disk may not be moved to the top of a stack if it is larger than the top of the new node's stack. That is, no large disk may be atop a small disk.
+  3.5 The objective is to move all disks to Dest.
+  
+4: Algorithm
+  4.1 One can move any arbitrary amount of disks from Start to Dest via the following algorithm:
+    4.2 Move all disks from Start to Aux4
+    4.3 Move all disks from Aux4 to Dest
+    
+  4.2 Moving disks from Start to Aux4
+    4.2.1 Algorithm:
+      while there are disks on start:
+        move the top disk of Start to Aux3
+        move the stack on Aux4 across the cycle to Aux2 (4.4)
+        move the top disk on Aux3 to Aux4
+        move the stack on Aux2 back across the cycle to Aux4 (4.4)
+    4.2.2 Assumptions
+      4.2.2.1 Start begins with a stack, which is in a valid order
+      4.2.2.2 Start is the only node which begins with disks
+      
+  4.3 Moving disks from Aux4 to Dest
+    4.3.1 Algorithm:
+      while there are disks on Aux4:
+        move all but one of the disks in Aux4's stack across the cycle to Aux2 (4.4)
+        move the remaining disk on Aux4 to Dest
+        move the stack on Aux2 back across the cycle to Aux4 (4.4)
+    4.3.2 Assumptions
+      4.3.2.1 All disks in play begin on Aux4 in a valid order
+    
+  4.4 Moving stacks across the cycle
+    4.4.1 Algorithm:    
+      if n = 1:
+        move the top disk twice along the cycle
+      otherwise:
+        preform this algorithm (4.4.1) for n-1 disks
+        move the nth disk once along the cycle
+        preform this algorithm (4.4.1) for n-1 disks
+        move the nth disk once along the cycle
+        preform this algorithm (4.4.1) for n-1 disks
+    4.4.2 Assumptions:
+        4.4.2.1 The node which holds the stack of disks to be moved is on the cycle
+        4.4.2.2 All stacks in the game are in a valid order
+        
+5: Analysis
+  5.1: The stack moving algorithm (4.4)
+    5.1.1: Time complexity:
+      Calling this algorithm for n causes three calls for n-1 to trigger.
+      This means the time complexity is on the order of O(3^(n/1))=O(3^n)
+    5.1.2: Space complexity:
+      Only one recursive call is ever added to the stack at one time.
+      This means the space complexity on the order of O(n)
+  5.2: Aux4 to Dest (4.3)
+    5.2.1: Time complexity:
+      This function only executes algorithm 4.4, and other operations of a lower order than O(3^n)
+      This function inherits time complexity O(3^n)
+    5.2.2: Space complexity:
+      This function only executes opperations or calls functions with O(n) or lower space complexity
+      This function inherits a space complexity of O(n)
+  5.3: Start to Aux4 (4.2)
+    5.3.1: Time complexity:
+      This function only executes algorithm 4.4, and other operations of a lower order than O(3^n)
+      This function inherits time complexity O(3^n)
+    5.3.2: Space complexity:
+      This function only executes opperations or calls functions with O(n) or lower space complexity
+      This function inherits a space complexity of O(n)
+  5.4: Gameplay (4.1)
+    5.4.1: Time complexity:
+      This function only calls other functions on the order of O(3^n)
+      O(2*3^n) reduces to a time complexity on the order of O(3^n)
+    5.4.2: Space complexity:
+      This function only calls other functions on the order of O(n)
+      O(2*n) reduces to a time complexity on the order of O(n)
+      
