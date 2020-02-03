@@ -1,5 +1,5 @@
 Problem:
-Determine for the following code how many pages are transferred between disk and main memory, assuming each page has 2000 words, the active memory set size is 1000 (i. e., at any time no more than 1000 pages may be in main memory), and the replacement strategy is LRU (the Least Recently Used page is always replaced); also assume that all two-dimensional arrays are of size (1:2000, 1:2000), with each array element occupying one word, N=4096
+Determine for the following code how many pages are transferred between disk and main memory, assuming each page has 2000 words, the active memory set size is 1000 (i. e., at any time no more than 1000 pages may be in main memory), and the replacement strategy is LRU (the Least Recently Used page is always replaced); also assume that all two-dimensional arrays are of size (1:2000, 1:2000), with each array element occupying one word, N=2000
 for I := 1 to 2000 do
   for J : =1 to 2000 do
     { A[I,J]:=A[I,J]*B[I,J]; B[I,J]:=C[N-I+1,J]*A[I,J] }
@@ -9,5 +9,10 @@ To store three 2000*2000 matricies, we need 3*2000*2000 = 12000000 words.
 With each page holding 2000 words, we need 3*2000*2000/2000=6000 pages to hold it all.
 
 (a) Taking the arrays in row-major order:
+Every time the third line of code is run, we see three reads (those being A[I,J], B[I,J], and C[N-1,J]), and two writes (those being A[I,J] and B[I,j])
+
+(2 writes + 3 reads) * (2000 pages) = 10000 pages transfered
 
 (b) Taking the arrays in column-major order:
+Doing things in this way resuts in a linear increase to row-major by a factor of 2000
+20000000 transfers
