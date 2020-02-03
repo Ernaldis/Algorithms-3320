@@ -15,28 +15,4 @@ public class Main {
         long run = end - start;
         System.out.println("Execution time for " + size + " is: " + run);
     }
-
-    /*public static int search(int[] array, int target){
-        int first = 0;
-        int last = array.length -1;
-        int mid;
-        int position = -1;
-        boolean found = false;
-
-        while (!found && first <= last);{
-            mid = (first+last)/2;
-            if (array[mid]==target){
-                found = true;
-                position = mid;
-            }
-            else if (array[mid] > target){
-                last = mid - 1;
-            }
-            else {
-                first = mid + 1;
-            }
-        }
-
-        return position;
-    }*/
 }
