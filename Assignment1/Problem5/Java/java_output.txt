@@ -1,0 +1,8 @@
+Execution time for 128 is: 161802574ns
+Execution time for 512 is: 219896103ns
+Execution time for 2048 is: 270452343ns
+Execution time for 8192 is: 276333012ns
+Execution time for 32768 is: 327654494ns
+Execution time for 131072 is: 294963153ns
+Execution time for 524288 is: 339572473ns
+Execution time for 2097152 is: 542531134ns
