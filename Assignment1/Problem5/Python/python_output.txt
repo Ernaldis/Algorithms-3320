@@ -1,0 +1,9 @@
+For size 128 time equals: 12.428978443145752
+For size 512 time equals: 16.91015911102295
+For size 2048 time equals: 19.761603593826294
+For size 8192 time equals: 22.6077139377594
+For size 32768 time equals: 25.873791694641113
+For size 131072 time equals: 28.864779233932495
+For size 524288 time equals: 31.891212224960327
+For size 2097152 time equals: 34.79578995704651
+
