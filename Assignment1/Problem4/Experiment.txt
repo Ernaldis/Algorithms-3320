@@ -1,0 +1,21 @@
+Hypothesis: It will take longer to allocate the second array, because the computer will have to move already existing arrays around in memory to make room.
+  Null hypothesis: The execution times are only dependednt on the amount of elements to be allocated.
+    elements/time * execution time = elements
+    elements/time is the same for both allocations
+  Alternative hypothesis: The elements/time will be smaller for the second allocation.
+
+Procedure:
+  Run attached C++ code for varying sizes of m, searching for the highest value of m which will not cause the system to crash. (A binary search from 1 to 1000000 is used for this task)
+  Time the excecution times for both array allocations.
+
+Data: For m = 202000
+  Time for part 1: 1540678.000000
+  Time for part 2: 2450369.000000
+  
+Analysis:
+  (3×202000 arrays) × (800000 elements per array) ÷ (1540678.000000 ns) = 314666.6597 
+  (202000 arrays) × (1000000 elements per array) ÷ (2450369.000000 ns) = 82436.5636
+  
+  These two elements/time values are significantly different for sufficiently large m.
+
+Conclusion: Reject the null hypothesis.
