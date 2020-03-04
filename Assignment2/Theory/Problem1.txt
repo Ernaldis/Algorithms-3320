@@ -1,0 +1,5 @@
+Problem:
+Assume you are given a linear list of size n each; consider the problem of determining wheather any element of one list is an element in the other(not value, element!!).
+(a) Derive a lower bound for this problem.
+(b) Design an algorithm for this problem. Derive its time complexity. It should be as close to your lower bound as possible.
+
