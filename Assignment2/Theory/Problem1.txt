@@ -3,3 +3,17 @@ Assume you are given a linear list of size n each; consider the problem of deter
 (a) Derive a lower bound for this problem.
 (b) Design an algorithm for this problem. Derive its time complexity. It should be as close to your lower bound as possible.
 
+Solution:
+(a)
+There is no way to solve the problem without looking at every element of both lists at least once. Therefore, no algorithm may take fewer than 2n opperations, which makes the lower bound O(n)
+
+(b)
+1: Store the contents of the first list in an array. (n assignments)
+2: Change every value stored in the elements of the second list. (n assignments)
+3: Compare every value in the first list to the corresponding value in the array. (n comparisons)
+4: Reassign the values stored in the first list as the values stored in the array as needed. (up to n assignments)
+
+In step 3, any array value which does not match the list value indicates that the corresponding list element is shared between the two lists.
+
+This algorithm has best case complexity O(3n) ~= O(n)
+This algorithm has worst case complexity O(4n) ~= O(n)
