@@ -1,0 +1,26 @@
+Trial 1:
+Size: 00128 | version 1: 04749 | version 2: 03929
+Size: 00256 | version 1: 04859 | version 2: 03878
+Size: 00512 | version 1: 04444 | version 2: 03885
+Size: 01024 | version 1: 04081 | version 2: 03378
+Size: 02048 | version 1: 06156 | version 2: 04208
+Size: 04096 | version 1: 03750 | version 2: 02366
+Size: 08192 | version 1: 07529 | version 2: 04033
+
+Trial 2:
+Size: 00128 | version 1: 03715 | version 2: 02912
+Size: 00256 | version 1: 03051 | version 2: 02931
+Size: 00512 | version 1: 05570 | version 2: 04399
+Size: 01024 | version 1: 03255 | version 2: 02494
+Size: 02048 | version 1: 05714 | version 2: 03791
+Size: 04096 | version 1: 07122 | version 2: 03889
+Size: 08192 | version 1: 08383 | version 2: 04419
+
+Trial 3:
+Size: 00128 | version 1: 03724 | version 2: 02974
+Size: 00256 | version 1: 03412 | version 2: 02846
+Size: 00512 | version 1: 06958 | version 2: 02623
+Size: 01024 | version 1: 03880 | version 2: 02769
+Size: 02048 | version 1: 03170 | version 2: 01940
+Size: 04096 | version 1: 07586 | version 2: 03700
+Size: 08192 | version 1: 09774 | version 2: 06345
