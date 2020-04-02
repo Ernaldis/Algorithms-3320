@@ -1,0 +1,4 @@
+Note: the final three values for n had to be discarded to prevent system crash.
+
+In each of the three trials, version 1 took longer than version 2 of the algorithm did.
+This result suggests that everything was not stored in core.
