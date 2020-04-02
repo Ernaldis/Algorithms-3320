@@ -1,0 +1,2 @@
+5001155 insertions took 8.27750707E9, averaging 455.3962 each
+5002338 deletions took 2.4515226E8, averaging 168.95145 each
