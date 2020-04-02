@@ -1,0 +1,35 @@
+a. The Find function can run more efficiently by making the insert and
+delete function shift the nodes according to the value of k = (n/3).
+b. We may also use a modified AVL tree that would allow the root node
+to be exempt from rebalancing.
+c. A normal AVL tree would be implemented using the ​ Insert ​ and ​ Delete
+functions with an additional shiftNode function at the end of the
+insert and delete functions.
+int k = n/3;
+void shiftNode(node, k)
+{
+if( k < node->value) {
+shiftNode(nodeLeftChild, k);
+shift node to left subtree;
+shift right child to root;
+rebalance excluding root;
+}
+else if(k > node->value) {
+shiftNode(nodeRightChild, k);
+shift node to right subtree;
+shift left child to root;
+rebalance excluding root;
+}
+else
+return;
+}
+● In this case, the time complexity of O(log​ 2​ n) is more efficient
+compared to the original Insert and Delete Operations, however, the
+Find operation has also been augmented.Name:​ Bryan Alarcon
+PSID:​ 1617652
+● The main function of Find is now to enter the root node of the AVL
+tree and get only the value that is needed.
+● Time complexity of new algorithm is O(1), an improvement over the
+original time complexity of O(log​ 2​ n).
+
+source: Bryan Alacron
