@@ -1,0 +1,5 @@
+Notice: divided M by 2^5 to prevent system crash
+
+
+There appears to be a linear relationship between M and the execution time for the most part.
+There is a spike near the beginning, probably denoting the filling of the first page. The program is then forved to contend with VMM.
