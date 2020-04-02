@@ -1,0 +1,4 @@
+This program outputs the hoffman code for each letter in the alphabet, given a list of the letter's frequencies.
+For the purposes of demonstration, the frequencies of each letter are randomized.
+
+code sourced from https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
