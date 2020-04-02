@@ -1,0 +1,4 @@
+With 10000000 opperations, we find insertions take much longer to complete than deletions do.
+These results support the existence of garbage collection.
+
+code sourced from geeks for geeks.

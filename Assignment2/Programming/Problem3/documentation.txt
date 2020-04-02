@@ -1,0 +1,4 @@
+This program shows garbage collection at work by fragmenting the memory available to the program.
+This is accomplished by the repeated creation and deletion of nodes in a small AVL tree, which store matrices in addition to the normal int values.
+Given garbage collection, one would expect to find creating a node takes much longer than removing one.
+
