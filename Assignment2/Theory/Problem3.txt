@@ -5,7 +5,63 @@ Definition of Average Work:
 The work involved in a chain of matrix multiplications is normally measured in scalar multiplications required. The average work, given each possible ordering is equally likely, is defined as the average of the number of scalar multiplications each unique ordering requires.
 
 Solution:
-In the algorithm to find the optimal ordering discussed in class, the matrix S is filled by considering how many scalar multiplications it takes to multiply the corresponding matrices. Once every k has been considered, the others are discarded.
-Instead of discarding in this way, create a new matrix for every possible configuration of k values. This is the same as finding every way of aranging parenthases, and calculating the number of scalar multiplications each ordering takes to complete. After this process is completed for every branch of S, the value in the top right corners of those branches will represent the number of multiplications would be needed for that particular configuration.
-The average of the numbers in the upper right corners of the branches of S is equal to the average work required.
+The average amount of work can be determined for a given sequence of n matrices is by is the Memorized-Matrix-Chain algorithm.
 
+    This will maintain a table of m[1..n, 1..n]containing the values computed by the m[i, j].
+
+    The values present in m[i, j] are minimum number of scalar multiplications that are required to compute the matrix Ai..j.
+
+    In the beginning the table contains an infinity value, this means, entries are yet to be filled.
+
+    This algorithm uses another sub algorithm to compute the cost of the m[i, j], that is LOOKUP-CHAIN algorithm.
+
+    LOOKUP-CHAIN algorithm contains condition at the first line to check whether the value of m[i, j] is less than infinity then it simply returns the previously computed cost of m[i, j].
+
+        If not, it computes the cost of m[i, j] and returns the value.
+
+Thus, the algorithm is given as,
+
+Memorized-Matrix-Chain(p)
+
+            n = length[p]-1
+
+            for i = 1 to n
+
+                        do for j = i to n
+
+                                    m[i, j] = infinity
+
+            return LOOKUP_CHAIN(p, 1, n)
+
+LOOKUP_CHAIN(p, i, j)
+
+            if m[i, j] < infinity
+
+                        return m[i, j]
+
+            if i == j
+
+                        m[i, j] = 0
+
+            else
+
+                        for k = i to j-1
+
+                                    q = LOOKUP_CHAIN(p, i, k) + LOOKUP_CHAIN(p, k+1, j) + pi -pkpj
+
+                                    if q < m[i, j]
+
+                                                m[i, j] = q
+
+            return m[i, j]
+
+The average-work here represents the optimal cost of the algorithm.
+
+The Memorized-Matrix-Chain algorithm is executed at O(n3) time.
+
+For each O(n^2) the LOOKUP_CHAIN takes O(n) time.
+
+Thus, it takes O(n3) time to calculate the table entries.
+
+
+source (https://www.chegg.com/homework-help/questions-and-answers/assume-every-possible-way-evaluating-sequence-n-matrices-every-possible-way-placing-parent-q9078643)
