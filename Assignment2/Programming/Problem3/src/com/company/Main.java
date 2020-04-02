@@ -1,124 +1,32 @@
 package com.company;
 
-import java.util.Scanner;
+import java.util.Random;
 
+class Main{
 
-// for main
+    public static void main(String[] args) {
+        AVLTree tree = new AVLTree();
 
-import java.util.Scanner;
+        Random rand = new Random();
+        int largeNum = 10000000;
+        int nodes = 0;
 
-public class Main
-
-{
-
-    public static void main(String[] args)
-
-    {
-
-        Scanner scan = new Scanner(System.in); //Creating object of AVLTree
-
-        AVLTree avlt = new AVLTree();
-
-        System.out.println("AVLTree Tree Test\n");
-
-        char ch;
-
-//Perform tree operations
-
-        do
-
-        {
-
-
-
-            System.out.println("\n AVLTree Operations\n");
-
-            System.out.println("1. insert ");
-
-            System.out.println("2. search");
-
-            System.out.println("3. count nodes");
-
-            System.out.println("4. check empty");
-
-            System.out.println("5. clear tree");
-
-            int choice = scan.nextInt();
-
-            switch (choice)
-
-            {
-
-                case 1 :
-
-                    System.out.println("Enter integer element to insert");
-
-                    avlt.insert( scan.nextInt() );
-
-                    break;
-
-                case 2 :
-
-                    System.out.println("Enter integer element to search");
-
-                    System.out.println("Search result : "+ avlt.search( scan.nextInt()));
-
-                    break;
-
-                case 3 :
-
-                    System.out.println("Nodes = "+ avlt.countNodes());
-
-                    break;
-
-                case 4 :
-
-                    System.out.println("Empty status = "+ avlt.isEmpty());
-
-                    break;
-
-                case 5 :
-
-                    System.out.println("\nTree Cleared");
-
-                    avlt.makeEmpty();
-
-                    break;
-
-                default :
-
-                    System.out.println("Wrong Entry \n ");
-
-                    break;
-
+        float startTime = System.nanoTime();
+        for (int i = 0; i< largeNum; i++){
+            if (rand.nextInt(2)==1){
+                tree.root = tree.insert(tree.root, rand.nextInt(300));
+                nodes += 1;
+            } else {
+                tree.root = tree.deleteNode(tree.root, rand.nextInt(300));
+                nodes -= 1;
             }
-
-//Display tree
-
-            System.out.print("\nPost order : ");
-
-            avlt.postorder();
-
-            System.out.print("\nPre order : ");
-
-            avlt.preorder();
-
-            System.out.print("\nIn order : ");
-
-            avlt.inorder();
-
-            System.out.println("\nDo you want to continue (Type y or n) \n");
-
-            ch = scan.next().charAt(0);
-
+            while (nodes > 50){
+                tree.root = tree.deleteNode(tree.root, rand.nextInt(300));
+                nodes -=1;
+            }
         }
-
-
-
-        while (ch == 'Y'|| ch == 'y');
-
+        float endTime = System.nanoTime();
+        System.out.println(" Completed in "+(endTime-startTime)/1000000000+" seconds");
     }
-
-
-
 }
+// This code has been contributed by Mayank Jaiswal
