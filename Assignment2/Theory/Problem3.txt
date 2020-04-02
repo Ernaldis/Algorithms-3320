@@ -1,8 +1,11 @@
 Question:
 Assume that every possible way of evaluating a sequence of n such matrices (every possible way of placing parentheses) is equally likely. Design an algorithm that determines the average amount of work (in terms of scalar multiplications) for a given sequence of n matrices. precisely define what is "average work"! Determine its time and space complexity.
 
+Definition of Average Work:
+The work involved in a chain of matrix multiplications is normally measured in scalar multiplications required. The average work, given each possible ordering is equally likely, is defined as the average of the number of scalar multiplications each unique ordering requires.
+
 Solution:
 In the algorithm to find the optimal ordering discussed in class, the matrix S is filled by considering how many scalar multiplications it takes to multiply the corresponding matrices. Once every k has been considered, the others are discarded.
 Instead of discarding in this way, create a new matrix for every possible configuration of k values. This is the same as finding every way of aranging parenthases, and calculating the number of scalar multiplications each ordering takes to complete. After this process is completed for every branch of S, the value in the top right corners of those branches will represent the number of multiplications would be needed for that particular configuration.
-Average the numbers in the upper right corners of the branches of S
+The average of the numbers in the upper right corners of the branches of S is equal to the average work required.
 
